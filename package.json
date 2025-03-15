@@ -1,6 +1,6 @@
 {
   "name": "@sharagulov/reui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "bin": {
     "reui": "./bin/reui.js"
   },
