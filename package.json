@@ -1,6 +1,6 @@
 {
   "name": "@sharagulov/reui",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "bin": {
     "reui": "./bin/reui.js"
   },
@@ -16,5 +16,15 @@
     "fs-extra": "^11.3.0",
     "inquirer": "^8.2.6"
   },
+  "keywords": [
+    "cli",
+    "react",
+    "monorepo",
+    "node",
+    "components",
+    "button",
+    "curtain",
+    "popup"
+  ],
   "license": "MIT"
 }
