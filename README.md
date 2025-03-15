@@ -16,17 +16,6 @@ Add UI components directly to your React project with a single command:
 npx @sharagulov/reui
 ```
 
- 
-## 🛠️ How it works
-
-Once installed, reui adds folders to your project. It will let you interactively choose the UI components:
-
-```bash
-? Select components to add: 
-  ◉ Button
-  ◯ Popup (coming soon)
-```
-
 
 ## 📂 Component structure example
 
