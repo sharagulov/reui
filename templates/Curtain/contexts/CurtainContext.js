@@ -34,7 +34,7 @@ export function CurtainProvider({ children }) {
       timeoutRef.current = null;
     }
     setIsVisible(false);
-  };
+  }; 
 
   useEffect(() => {
     const from = prevLocation.current;
