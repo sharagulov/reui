@@ -33,5 +33,5 @@ const getComponentsList = () => fsExtra.readdirSync(templatesDir);
     console.log(`✅ ${componentName} added successfully!`);
   });
 
-  console.log(`🚀 All components have been installed! \n`);
+  console.log(`🚀 All components have been installed!\n`);
 })();
