@@ -10,6 +10,7 @@ const templatesDir = path.join(__dirname, '../templates');
 const getComponentsList = () => fsExtra.readdirSync(templatesDir);
 
 (async () => {
+  console.log("\n");
   const { components } = await inquirer.prompt([
     {
       type: 'checkbox',
@@ -32,8 +33,5 @@ const getComponentsList = () => fsExtra.readdirSync(templatesDir);
     console.log(`✅ ${componentName} added successfully!`);
   });
 
-  console.log(`🛠 Formatting code...`);
-  execSync('npx prettier --write src/components', { stdio: 'inherit' });
-
-  console.log(`🚀 All components installed and formatted!`);
+  console.log(`🚀 All components have been installed! \n`);
 })();
