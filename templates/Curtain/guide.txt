@@ -1,0 +1,58 @@
+HOW TO USE CURTAIN?
+
+IN APP.JS (ROOT FILE WHICH HANDLES ROUTING) ADD PROVIDER AND OVERLAY INSIDE BrowserRouter:
+
+|————————————————————————————|
+
+// App.js
+
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainPage from '@/pages/MainPage/MainPage';
+
+import { CurtainProvider } from '@/contexts/CurtainContext';
+import CurtainOverlay from '@/components/curtain/CurtainComponent';
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <CurtainProvider>
+        <CurtainOverlay />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+        </Routes>
+      </CurtainProvider>
+    </BrowserRouter>
+  );
+}
+
+|————————————————————————————|
+
+NOW IT WORKS AUTOMATICALLY IF YOU USE *PATH TRANSITIONS* OR UNCONDITIONAL OVERLAY DISPLAY. OTHERWISE, ADDITIONALLY, YOU NEED TO CALL THE TRIGGER MANUALLY BY ADDING IMPORTS AND FUNCTIONS TO PAGE/COMPONENT:
+
+|————————————————————————————|
+
+// Page.jsx
+
+import React from 'react';
+import { useCurtain } from "@/contexts/CurtainContext";
+
+export default function Page() {
+  const { showCurtain, hideCurtain } = useCurtain();
+
+  ...
+
+  const handleCurtain = async () => {
+    showCurtain(1500);
+  }
+
+  return (
+  <div>
+  ...
+    <button onClick={handleCurtain}>Button</button>
+  ...
+  </div>
+  );
+}
+
+|————————————————————————————|
