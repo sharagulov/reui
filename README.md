@@ -35,7 +35,7 @@ your-project
 | -------- | ------- |
 | Button  | ✅ Available |
 | Curtain | ✅ Available |
-| Popup | ⌛ Coming soon |
+| Popup | ✅ Available |
 
 
 ## 📄 License

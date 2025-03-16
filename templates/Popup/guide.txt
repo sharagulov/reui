@@ -1,6 +1,6 @@
-HOW TO USE CURTAIN?
+HOW TO USE POPUP?
 
-IN APP.JS (ROOT FILE WHICH HANDLES ROUTING) ADD PROVIDER AND OVERLAY INSIDE BrowserRouter:
+IN APP.JS (ROOT FILE WHICH HANDLES ROUTING) ADD PROVIDER AND COMPONENT INSIDE BrowserRouter:
 
 |————————————————————————————|
 
@@ -10,46 +10,42 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from '@/pages/MainPage/MainPage';
 
-import { CurtainProvider } from '@/components/Curtain/contexts/CurtainContext';
-import CurtainOverlay from '@/components/Curtain/CurtainComponent';
+import { PopupProvider } from '@/components/Popup/contexts/PopupContext';
+import PopupComponent from '@/components/Popup/PopupComponent';
 
 export default function App() {
   return (
     <BrowserRouter>
-      <CurtainProvider>
-        <CurtainOverlay />
+      <PopupProvider>
+        <PopupComponent />
         <Routes>
           <Route path="/" element={<MainPage />} />
         </Routes>
-      </CurtainProvider>
+      </PopupProvider>
     </BrowserRouter>
   );
 } 
 
 |————————————————————————————|
 
-NOW IT WORKS AUTOMATICALLY IF YOU USE *PATH TRANSITIONS* OR UNCONDITIONAL OVERLAY DISPLAY. OTHERWISE, ADDITIONALLY, YOU NEED TO CALL THE TRIGGER MANUALLY BY ADDING IMPORTS AND FUNCTIONS TO PAGE/COMPONENT:
+
 
 |————————————————————————————|
 
 // MainPage.jsx
 
 import React from 'react';
-import { useCurtain } from "@/components/curtain/contexts/CurtainContext";
+import { usePopup } from '@/components/Popup/contexts/PopupContext';
 
 export default function MainPage() {
-  const { showCurtain, hideCurtain } = useCurtain();
+  const { showPopup } = usePopup();
 
   ...
-
-  const handleCurtain = async () => {
-    showCurtain(1500);
-  }
 
   return (
   <div>
   ...
-    <button onClick={handleCurtain}>Button</button>
+    <button onClick={showPopup}>Button</button>
   ...
   </div>
   );
